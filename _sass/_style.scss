@@ -1,0 +1,108 @@
+$sidebar-width: 13rem;
+$background-color-1: #DCD7C9;
+$background-color-2: #2C3639;
+$background-color-3: #A27B5C;
+$background-color-4: #185519;
+
+
+html {
+    box-sizing: border-box;
+    background-color: $background-color-1;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    font-family: "Rubik";
+    overflow: hidden;
+}
+
+header {
+    position: fixed;
+    width: 100vw;
+    top: 0vh;
+    height: 0rem;
+    visibility: hidden;
+    background-color: $background-color-2;
+    color: white;
+    border-bottom: 1rem;
+    border-color: white;
+
+
+    button.menu-btn {
+        font-size: 1.4rem;
+        font-weight: bolder;
+        color: inherit;
+        background: none;
+        border: 0rem;
+    }
+
+    button.menu-btn:hover {
+        background-color: $background-color-3;
+    }
+
+
+}
+
+div.sidebar {
+    position: fixed;
+    top: 0vh;
+    margin: 0;
+    padding: 0;
+    width: $sidebar-width;
+    background-color: $background-color-2;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: transform 0.3s ease;
+
+    a {
+        display: block;
+        padding: 1rem;
+        color: white;
+    }
+
+    a:hover {
+        background-color: $background-color-4;
+    }
+
+    .hidden {
+        transform: translateX(-100%);
+    }
+}
+
+
+main {
+    margin-left: $sidebar-width;
+    max-height: 98;
+}
+
+@media screen and (max-width: 700px) {
+    header {
+        height: 1.8rem;
+        padding: 0.1rem;
+        visibility: visible;
+    }
+
+
+    .sidebar {
+        transform: translateX(-100%);
+    }
+
+    .sidebar.hidden {
+        top: 2rem;
+        height: calc(100vh - 1.97rem);
+    }
+
+    .sidebar.show {
+        transform: translateX(0);
+    }
+
+    main {
+        
+        margin-left: 0rem;
+        margin-top: 1.97rem;
+        height: 100vh;
+        overflow-y: auto;
+    }
+}
