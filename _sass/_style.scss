@@ -1,4 +1,6 @@
-$sidebar-width: 13rem;
+$sidebar-width: 12rem;
+$sidebar-width-mobile: 50vw;
+
 $background-color-1: #DCD7C9;
 $background-color-2: #2C3639;
 $background-color-3: #A27B5C;
@@ -51,15 +53,13 @@ div.sidebar {
     padding: 0;
     width: $sidebar-width;
     background-color: $background-color-2;
-    height: 100vh;
-    overflow-y: auto;
-    overflow-x: hidden;
-    transition: transform 0.3s ease;
+    height: 100%;
+    overflow: hidden;
+    transition: transform 0.2s ease;
 
-    a {
+    a.sidebar-button {
         display: block;
         padding: 1rem;
-        color: white;
     }
 
     a:hover {
@@ -69,12 +69,38 @@ div.sidebar {
     .hidden {
         transform: translateX(-100%);
     }
+
+    a, p {
+        color: white
+    }
 }
+
+div.sidebar-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    p {
+        margin-block-start: 0em;
+        margin-block-end: 0em;
+    }
+
+    p.credits {
+        padding: 1rem;
+
+    }
+}
+
 
 
 main {
     margin-left: $sidebar-width;
-    max-height: 98;
+    height: 100vh;
+    overflow-y: auto;
+    padding-bottom: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
 }
 
 @media screen and (max-width: 700px) {
@@ -96,13 +122,22 @@ main {
 
     .sidebar.show {
         transform: translateX(0);
+        width: 50vw;
     }
 
     main {
-        
         margin-left: 0rem;
         margin-top: 1.97rem;
-        height: 100vh;
-        overflow-y: auto;
     }
+}
+
+@media screen and (min-width: 1000px) {
+    main {
+        padding-left: 10vw;
+        padding-right: 10vw;
+    }
+}
+
+h1.page-heading {
+    margin-block-start: 1rem;
 }

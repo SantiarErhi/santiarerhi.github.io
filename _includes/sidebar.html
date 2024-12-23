@@ -1,5 +1,12 @@
 <div id="sidebar" class="sidebar">
-    {% for entry in site.data.sidebar-nav %}
-        <a href="{{ entry.link }}">{{ entry.title }}</a>
-    {% endfor %}
+    <div class="sidebar-container">
+        <div class="sidebar-top-section">
+            {% for entry in site.data.sidebar-nav %}
+            <a class="sidebar-button" href="{{ entry.link }}">{{ entry.title }}</a>
+            {% endfor %}
+        </div>
+        <div class="sidebar-bottom-section">
+            <p class="credits">Powered by <a href="https://jekyllrb.com/">Jekyll</a></p>
+        </div>
+    </div>
 </div>

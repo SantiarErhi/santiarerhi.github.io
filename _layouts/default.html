@@ -3,31 +3,32 @@
 {%- include head.html -%}
 
 <body>
-    {%- include header.html -%}
-    {%- include sidebar.html -%}
-    <main>
-        {{- content -}}
-    </main>
-    <script>
-        const sidebar = document.getElementById('sidebar');
-    
-        function toggleSidebar() {
-          sidebar.classList.toggle('show');
-        }
-    
-        // Ensure sidebar is always visible on larger screens
-        window.addEventListener('resize', () => {
-          if (window.innerWidth >= 700) {
-            sidebar.classList.remove('hidden', 'show');
-          } else {
-            sidebar.classList.add('hidden');
-          }
-        });
-    
-        // Set initial state
-        if (window.innerWidth < 700) {
-          sidebar.classList.add('hidden');
-        }
-      </script>
+  {%- include header.html -%}
+  {%- include sidebar.html -%}
+  <main>
+    {{- content -}}
+  </main>
+  <script>
+    const sidebar = document.getElementById('sidebar');
+
+    function toggleSidebar() {
+      sidebar.classList.toggle('show');
+    }
+
+    // Ensure sidebar is always visible on larger screens
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 700) {
+        sidebar.classList.remove('hidden', 'show');
+      } else {
+        sidebar.classList.add('hidden');
+      }
+    });
+
+    // Set initial state
+    if (window.innerWidth < 700) {
+      sidebar.classList.add('hidden');
+    }
+  </script>
 </body>
+
 </html>
