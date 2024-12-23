@@ -22,8 +22,8 @@ title: SantiarErhi's blog
 email: sviatoslav.slobodian@outlook.com
 description: >-
   Blog about software development, ITOps, and another interesting things.  
-domain: santiarerhi.github.io       # if you want to force HTTPS, specify the domain without the http at the start, e.g. example.com
-url: https://santiarerhi.github.io  # the base hostname and protocol for your site, e.g. http://example.com
+domain: santiarerhi.org       # if you want to force HTTPS, specify the domain without the http at the start, e.g. example.com
+url: https://santiarerhi.org  # the base hostname and protocol for your site, e.g. http://example.com
 baseurl: ""      # place folder name if the site is served in a subfolder
 github_username:  SantiarErhi
 timezone: Europe/Kyiv
